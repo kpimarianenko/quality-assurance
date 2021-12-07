@@ -1,3 +1,6 @@
+import BinaryFile from '../src/BinaryFile';
+import Directory from '../src/Directory';
+
 describe('Binary file', () => {
   const root = new Directory('root');
   const filename = 'filename';

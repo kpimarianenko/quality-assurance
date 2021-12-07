@@ -1,3 +1,6 @@
+import LogTextFile from '../src/LogTextFile';
+import Directory from '../src/Directory';
+
 describe('Log text file', () => {
   const filename = 'filename';
   let root : Directory = null;

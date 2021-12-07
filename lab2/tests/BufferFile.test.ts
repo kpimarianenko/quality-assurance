@@ -1,3 +1,6 @@
+import BufferFile from '../src/BufferFile';
+import Directory from '../src/Directory';
+
 describe('Buffer file', () => {
   const root = new Directory('root');
   const filename = 'filename';

@@ -1,3 +1,5 @@
+import Directory from '../src/Directory';
+
 describe('Directory', () => {
   const dirname = 'dirname';
   let root : Directory = null;
