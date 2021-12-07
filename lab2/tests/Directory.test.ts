@@ -1,5 +1,7 @@
 import Directory from '../src/Directory';
 
+import config from '../config';
+
 describe('Directory', () => {
   const dirname = 'dirname';
   let root : Directory = null;
@@ -40,8 +42,8 @@ describe('Directory', () => {
   test('should be impossible to overflow', () => {
     const dir = new Directory(dirname, root);
     expect(() => {
-      const { DIR_MAX_ELEMS } = process.env;
-      for (let i = 0; i < +DIR_MAX_ELEMS + 1; i++) {
+      const { DIR_MAX_ELEMS } = config;
+      for (let i = 0; i <= DIR_MAX_ELEMS; i++) {
         dir.add(new Directory(`dir${i}`));
       }
     }).toThrowError();

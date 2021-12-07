@@ -2,11 +2,13 @@ import BinaryFile from '../src/BinaryFile';
 import Directory from '../src/Directory';
 
 describe('Binary file', () => {
-  const root = new Directory('root');
   const filename = 'filename';
+  let root : Directory = null;
+
+  beforeEach(() => root = new Directory('root'));
 
   test('should be created successfully', () => {
-    expect(() => new BinaryFile('file1', root)).not.toThrowError();
+    expect(() => new BinaryFile(filename, root)).not.toThrowError();
   });
 
   test('should be empty after creation', () => {

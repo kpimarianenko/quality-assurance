@@ -22,6 +22,12 @@ export class FolderOverflowedError extends Error {
   }
 }
 
+export class BufferOverflowedError extends Error {
+  constructor() {
+    super('Buffer is overflowed');
+  }
+}
+
 export class ReadFromEmptyBufferError extends Error {
   constructor() {
     super('Unable to read from empty buffer')

@@ -37,6 +37,6 @@ describe('Log text file', () => {
     file.append(line1);
     expect(file.content()).toBe(`${line1}\n`);
     file.append(line2);
-    expect(file.content()).toBe(`${line1}\n${line1}\n`);
+    expect(file.content()).toBe(`${line1}\n${line2}\n`);
   });
 });

@@ -1,15 +1,16 @@
 import BufferFile from '../src/BufferFile';
 import Directory from '../src/Directory';
 
+import config from '../config';
+
 describe('Buffer file', () => {
   const root = new Directory('root');
   const filename = 'filename';
+  let file : BufferFile = null;
 
   test('should be created successfully', () => {
-    expect(() => new BufferFile(filename, root)).not.toThrowError();
+    expect(() => file = new BufferFile(filename, root)).not.toThrowError();
   });
-
-  const file = new BufferFile(filename, root);
 
   test('should have a proper name', () => {
     expect(file.name).toBe(filename);
@@ -41,8 +42,8 @@ describe('Buffer file', () => {
 
   test('should be impossible to overflow', () => {
     expect(() => {
-      const { MAX_BUF_FILE_SIZE } = process.env;
-      for (let i = 0; i < +MAX_BUF_FILE_SIZE + 1; i++) {
+      const { MAX_BUF_FILE_SIZE } = config;
+      for (let i = 0; i <= MAX_BUF_FILE_SIZE; i++) {
         file.push(`content${i}`);
       }
     }).toThrowError();
